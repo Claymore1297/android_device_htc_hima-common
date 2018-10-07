@@ -74,6 +74,7 @@ extern "C" void _ZN7android21SurfaceComposerClient17setDisplaySurfaceERKNS_2spIN
     const sp<IBinder>& token, const sp<IGraphicBufferProducer>& bufferProducer) {
   // setDisplaySurface is a static method, call it directly
   t->setDisplaySurface(token, bufferProducer);
+  //return t.apply();
 }
 
 // sp<SurfaceControl> createSurface(const String8& name, uint32_t w, uint32_t h,
@@ -86,12 +87,12 @@ extern "C" void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8
     uint32_t flags, SurfaceControl* parent, uint32_t windowType,
     uint32_t ownerUid);
 
-extern sp<android::SurfaceControl> ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij(
+/*extern sp<android::SurfaceControl> ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij(
     const android::String8& name, uint32_t w, uint32_t h, PixelFormat format,
     uint32_t flags) {
   sp<SurfaceComposerClient> scc = new SurfaceComposerClient();
   return scc->createSurface(name, w, h, format, flags,  nullptr, 0, 0);
-}
+}*/
 
 // status_t setLayer(int32_t layer);
 /* needed for N-libs
@@ -101,6 +102,7 @@ extern "C" status_t _ZN7android14SurfaceControl8setLayerEj(uint32_t layer) {
   return _ZN7android14SurfaceControl8setLayerEi(layer);
 }
 */
+
 // android::Fence::~Fence()
 extern "C" void _ZN7android5FenceD1Ev() {
   // no-op, the explicit destructor was replaced with = default;

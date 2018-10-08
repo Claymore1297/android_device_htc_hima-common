@@ -1,0 +1,5 @@
+allow cameraserver mm-qcamera-daemon:unix_dgram_socket sendto;
+allow cameraserver block_device:dir search;
+allow cameraserver debugfs_heaps_system:file r_file_perms;
+allow cameraserver proc:file {open read getattr};
+allow cameraserver apk_data_file:dir search;

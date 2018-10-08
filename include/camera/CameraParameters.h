@@ -38,7 +38,7 @@ struct Size {
     }
 };
 
-class CameraParameters : public CameraParameters_EXT
+class CameraParameters
 {
 public:
     CameraParameters();
@@ -689,7 +689,6 @@ public:
 
     /* HTC parameters */
     static const char SCENE_MODE_TEXT[];
-    static const char KEY_SMILEINFO_BYFACE_SUPPORTED[];
 
     /**
      * Returns the the supported preview formats as an enum given in graphics.h
@@ -700,6 +699,7 @@ public:
 
 private:
     DefaultKeyedVector<String8,String8>    mMap;
+    CameraParameters_EXT mParamsExt;
 };
 
 }; // namespace android

@@ -4,6 +4,9 @@
 /dev/tfa9887                    u:object_r:audio_device:s0
 /dev/tfa9887l                   u:object_r:audio_device:s0
 
+# Camera
+/sys/android_camera_awb_cal(/.*)?                                   u:object_r:sysfs_graphics:s0
+
 # CIR
 /dev/ttyHSL2                                u:object_r:cir_device:s0
 /system/vendor/bin/cir_fw_update            u:object_r:cir_fw_update_exec:s0
@@ -45,6 +48,11 @@
 
 # Vibrator control
 /sys/devices/virtual/timed_output/vibrator/voltage_level u:object_r:sysfs_vibeamp:s0
+
+# Sensors
+/sys/bus/iio/devices(/.*)?                                          u:object_r:sysfs_sensors:s0
+/sys/devices/soc.0/f9927000.i2c/i2c-15/15-0072/iio:device0(/.*)?    u:object_r:sysfs_sensors:s0
+/sys/devices/virtual/htc_sensorhub(/.*)?                            u:object_r:sysfs_sensors:s0
 
 # Vendor blobs
 /system/vendor/bin/qseecomd            u:object_r:qseecomd_exec:s0

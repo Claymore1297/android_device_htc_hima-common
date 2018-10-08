@@ -37,7 +37,7 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Add WiFi Config files
-$(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+$(call inherit-product, hardware/broadcom/wlan/bcmdhd/firmware/bcm4356/device-bcm.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -108,10 +108,12 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl-legacy \
-    camera.device@1.0-impl-legacy \
+    android.hardware.camera.provider@2.4-impl-hima \
     libshim_camera \
     Snap
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hdrhax:system/vendor/etc/hdrhax
 
 # Consumer IR
 PRODUCT_PACKAGES += \

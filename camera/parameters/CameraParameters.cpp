@@ -177,7 +177,6 @@ const char CameraParameters::LIGHTFX_HDR[] = "high-dynamic-range";
 
 // HTC settings
 const char CameraParameters::SCENE_MODE_TEXT[] = "text";
-const char CameraParameters::KEY_SMILEINFO_BYFACE_SUPPORTED[] = "smileinfo-byface-supported";
 
 static String8 get_forced_value(String8 key, String8 value)
 {
@@ -199,7 +198,7 @@ static void replaceValueFor(DefaultKeyedVector<String8,String8> &map, String8 ke
 }
 
 CameraParameters::CameraParameters()
-    : CameraParameters_EXT(this), mMap()
+    : mMap(), mParamsExt(this)
 {
 }
 
